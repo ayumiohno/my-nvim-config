@@ -7,9 +7,7 @@ local clangformat = function()
     local pos = vim.api.nvim_win_get_cursor(0)
     vim.api.nvim_command("%! clang-format")
     local lines = vim.api.nvim_buf_line_count(0)
-    local dst = math.min(lines, pos[1])
-    pos[1] = dst
-    pos[2] = 0
+    pos[1] = math.min(lines, pos[1])
     vim.api.nvim_win_set_cursor(0, pos)
 end
 

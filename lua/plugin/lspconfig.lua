@@ -1,11 +1,11 @@
 return function()
-    require('lspconfig')['ccls'].setup {
+    --[[require('lspconfig')['ccls'].setup {
         init_options = {
             compilationDatabaseDirectory = "build",
             index = {threads = 0},
             clang = {excludeArgs = {"-frounding-math"}}
         }
-    }
+    }]]
     require('lspconfig')['pyright'].setup {
         on_attach = on_attach,
         flags = lsp_flags
@@ -19,6 +19,10 @@ return function()
         flags = lsp_flags,
         -- Server-specific settings...
         settings = {["rust-analyzer"] = {}}
+    }
+    require('lspconfig')['clangd'].setup {
+        on_attach = on_attach,
+        flags = lsp_flags
     }
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
     vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')

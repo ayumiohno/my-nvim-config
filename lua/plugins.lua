@@ -9,17 +9,20 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use({'neovim/nvim-lsp'})
-
     use({"nvim-lua/plenary.nvim"})
-    use({"hrsh7th/vim-vsnip"}) -- The completion plugin
-    use({"hrsh7th/cmp-buffer"}) -- buffer completions
-    use({"hrsh7th/cmp-path"}) -- path completions
-    use({"hrsh7th/cmp-cmdline"}) -- cmdline completions
+    use({"hrsh7th/vim-vsnip"})
+    use({"hrsh7th/cmp-buffer"})
+    use({"hrsh7th/cmp-path"})
+    use({"hrsh7th/cmp-cmdline"})
     use({"hrsh7th/cmp-nvim-lsp"})
     use({"hrsh7th/cmp-nvim-lua"})
-
+    use {"williamboman/mason.nvim", config = require('plugin.mason')}
+    use {
+        "williamboman/mason-lspconfig.nvim",
+        config = require('plugin.mason-lspconfig')
+    }
     use {"neovim/nvim-lspconfig", config = require('plugin.lspconfig')}
+    -- use {"neoclide/coc.nvim"}
     use {"hrsh7th/nvim-cmp", config = require('plugin.cmp')}
 
     use({"rust-lang/rust.vim"})
