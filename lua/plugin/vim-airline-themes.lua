@@ -1,3 +1,1 @@
-return function()
-    -- vim.cmd 'let g:airline_theme = "simple"'
-end
+return function() vim.cmd 'let g:airline_theme = "tender"' end

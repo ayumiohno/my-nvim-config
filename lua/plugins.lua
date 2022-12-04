@@ -9,6 +9,13 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use {'jacoborus/tender.vim', config = require('plugin.color-scheme')}
+    use {'vim-airline/vim-airline', config = require('plugin.vim-airline')}
+    use {
+        'vim-airline/vim-airline-themes',
+        config = require('plugin.vim-airline-themes')
+    }
+
     use({"nvim-lua/plenary.nvim"})
     use({"hrsh7th/vim-vsnip"})
     use({"hrsh7th/cmp-buffer"})
@@ -29,11 +36,10 @@ return require('packer').startup(function(use)
 
     use({'nvim-tree/nvim-web-devicons'})
 
-    use {'vim-airline/vim-airline', config = require('plugin.vim-airline')}
-
     use {
-        'vim-airline/vim-airline-themes',
-        config = require('plugin.vim-airline-themes')
+        'ibhagwan/fzf-lua',
+        requires = {'nvim-tree/nvim-web-devicons'},
+        config = require('plugin.fzf-lua')
     }
 
 end)

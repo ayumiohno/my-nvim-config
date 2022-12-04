@@ -4,7 +4,8 @@ return function()
             compilationDatabaseDirectory = "build",
             index = {threads = 0},
             clang = {excludeArgs = {"-frounding-math"}}
-        }
+        },
+				on_attach = 'f'
     }]]
     require('lspconfig')['pyright'].setup {
         on_attach = on_attach,
@@ -17,13 +18,14 @@ return function()
     require('lspconfig')['rust_analyzer'].setup {
         on_attach = on_attach,
         flags = lsp_flags,
-        -- Server-specific settings...
         settings = {["rust-analyzer"] = {}}
     }
     require('lspconfig')['clangd'].setup {
         on_attach = on_attach,
         flags = lsp_flags
     }
+    require('lspconfig.ui.windows').default_options.border = 'single'
+
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
     vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')

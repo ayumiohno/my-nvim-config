@@ -1,4 +1,6 @@
 return function()
+
+    vim.api.nvim_set_hl(0, "MyCmpHL", {fg = "#f5f5dc", bg = "#3c3c3c"})
     -- Set up nvim-cmp.
     local cmp = require 'cmp'
 
@@ -10,8 +12,15 @@ return function()
             end
         },
         window = {
-            -- completion = cmp.config.window.bordered(),
-            -- documentation = cmp.config.window.bordered(),
+            completion = cmp.config.window.bordered({
+                scrolloff = 5,
+                col_offset = 3,
+                border = 'double',
+                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+            }),
+            documentation = cmp.config.window.bordered({
+                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+            })
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -36,13 +45,31 @@ return function()
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({'/', '?'}, {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = {{name = 'buffer'}}
+        sources = {{name = 'buffer'}},
+        window = {
+            completion = cmp.config.window.bordered({
+                scrolloff = 5,
+                col_offset = 3,
+                border = 'double',
+                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+            }),
+            documentation = cmp.config.window.bordered()
+        }
     })
 
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}})
+        sources = cmp.config.sources({{name = 'path'}}, {{name = 'cmdline'}}),
+        window = {
+            completion = cmp.config.window.bordered({
+                scrolloff = 5,
+                col_offset = 3,
+                border = 'double',
+                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+            }),
+            documentation = cmp.config.window.bordered()
+        }
     })
 
     -- Set up lspconfig.
