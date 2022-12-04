@@ -1,1 +1,1 @@
-return function() vim.cmd('set termguicolors') end
+return function() vim.cmd('colorscheme nightfox') end

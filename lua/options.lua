@@ -21,11 +21,3 @@ local options = {
 for k, v in pairs(options) do vim.opt[k] = v end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.api.nvim_set_hl(0, 'MyNormal', {
-    sp = 'Black',
-    fg = '#f8f4e6',
-    bg = '#515254',
-    ctermbg = 'Black',
-    ctermfg = 'White'
-})
-vim.cmd('set winhl=NormalNC:MyNormal')

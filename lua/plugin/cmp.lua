@@ -1,6 +1,6 @@
 return function()
 
-    vim.api.nvim_set_hl(0, "MyCmpHL", {fg = "#f5f5dc", bg = "#3c3c3c"})
+    -- vim.api.nvim_set_hl(0, "MyCmpHL", {fg = "#f5f5dc", bg = "#3c3c3c"})
     -- Set up nvim-cmp.
     local cmp = require 'cmp'
 
@@ -15,12 +15,9 @@ return function()
             completion = cmp.config.window.bordered({
                 scrolloff = 5,
                 col_offset = 3,
-                border = 'double',
-                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+                border = 'double'
             }),
-            documentation = cmp.config.window.bordered({
-                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
-            })
+            documentation = cmp.config.window.bordered({})
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -50,8 +47,7 @@ return function()
             completion = cmp.config.window.bordered({
                 scrolloff = 5,
                 col_offset = 3,
-                border = 'double',
-                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+                border = 'double'
             }),
             documentation = cmp.config.window.bordered()
         }
@@ -65,8 +61,7 @@ return function()
             completion = cmp.config.window.bordered({
                 scrolloff = 5,
                 col_offset = 3,
-                border = 'double',
-                winhighlight = 'Normal:MyCmpHL,FloatBorder:Normal,CursorLine:Visual,Search:None'
+                border = 'double'
             }),
             documentation = cmp.config.window.bordered()
         }
@@ -78,4 +73,5 @@ return function()
     -- require('lspconfig')['ccls'].setup {capabilities = capabilities}
     require('lspconfig')['clangd'].setup {capabilities = capabilities}
     require('lspconfig')['pyright'].setup {capabilities = capabilities}
+    require('lspconfig')['rust_analyzer'].setup {capabilities = capabilities}
 end

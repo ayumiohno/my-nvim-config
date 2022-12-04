@@ -9,7 +9,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use {'jacoborus/tender.vim', config = require('plugin.color-scheme')}
+    -- use {'jacoborus/tender.vim', config = require('plugin.color-scheme')}
+    use {'EdenEast/nightfox.nvim', config = require('plugin.color-scheme')}
     use {'vim-airline/vim-airline', config = require('plugin.vim-airline')}
     use {
         'vim-airline/vim-airline-themes',
@@ -42,4 +43,30 @@ return require('packer').startup(function(use)
         config = require('plugin.fzf-lua')
     }
 
+    use {'windwp/nvim-autopairs', config = require('plugin.autopairs')}
+
+    use {'preservim/nerdtree', config = require('plugin.tree')}
+
+    use {'j-hui/fidget.nvim', config = require('plugin.fidget')}
+
+    use {'kevinhwang91/nvim-hlslens', config = require('plugin.hlslens')}
+
+    use {
+        "tversteeg/registers.nvim",
+        config = function() require("registers").setup() end
+    }
+
+    use {
+        "zbirenbaum/copilot.lua",
+        event = "InsertEnter",
+        config = require('plugin.copilot')
+    }
+
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = {"copilot.lua"},
+        config = function() require("copilot_cmp").setup() end
+    }
+
+    use {'chrisbra/csv.vim', config = require('plugin.csv')}
 end)
