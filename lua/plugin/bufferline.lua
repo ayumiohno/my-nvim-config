@@ -30,5 +30,8 @@ return function()
 			separator_style = "slant",
 		},
 	})
-
+	vim.keymap.set('n', 'bb', '<CMD>BufferLinePick<CR>')
+	vim.keymap.set('n', '<C-l>', '<CMD>BufferLineCycleNext<CR>')
+	vim.keymap.set('n', '<C-h>', '<CMD>BufferLineCyclePrev<CR>')
+	vim.keymap.set('n', 'bs', '<CMD>BufferLineSortByDirectory<CR>')
 end
