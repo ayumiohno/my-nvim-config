@@ -192,7 +192,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-airline"] = {
-    config = { "\27LJ\2\2Î\1\0\0\4\0\v\0\0236\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\a\0'\3\b\0B\0\4\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\t\0'\3\n\0B\0\4\1K\0\1\0\19:bprevious<CR>\n<C-l>\15:bnext<CR>\n<C-h>\6n\bset\vkeymap$let g:airline_detect_modified=11let g:airline#extensions#tabline#enabled = 1\bcmd\bvim\0" },
+    config = { "\27LJ\2\2ù\2\0\0\4\0\f\0\0276\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\b\0'\3\t\0B\0\4\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\n\0'\3\v\0B\0\4\1K\0\1\0\19:bprevious<CR>\n<C-l>\15:bnext<CR>\n<C-h>\6n\bset\vkeymap&let g:airline_powerline_fonts = 1$let g:airline_detect_modified=11let g:airline#extensions#tabline#enabled = 1\bcmd\bvim\0" },
     loaded = true,
     path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
@@ -253,7 +253,7 @@ try_loadstring("\27LJ\2\0028\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\
 time([[Config for fidget.nvim]], false)
 -- Config for: vim-airline
 time([[Config for vim-airline]], true)
-try_loadstring("\27LJ\2\2Î\1\0\0\4\0\v\0\0236\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\a\0'\3\b\0B\0\4\0016\0\0\0009\0\4\0009\0\5\0'\1\6\0'\2\t\0'\3\n\0B\0\4\1K\0\1\0\19:bprevious<CR>\n<C-l>\15:bnext<CR>\n<C-h>\6n\bset\vkeymap$let g:airline_detect_modified=11let g:airline#extensions#tabline#enabled = 1\bcmd\bvim\0", "config", "vim-airline")
+try_loadstring("\27LJ\2\2ù\2\0\0\4\0\f\0\0276\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\b\0'\3\t\0B\0\4\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\n\0'\3\v\0B\0\4\1K\0\1\0\19:bprevious<CR>\n<C-l>\15:bnext<CR>\n<C-h>\6n\bset\vkeymap&let g:airline_powerline_fonts = 1$let g:airline_detect_modified=11let g:airline#extensions#tabline#enabled = 1\bcmd\bvim\0", "config", "vim-airline")
 time([[Config for vim-airline]], false)
 -- Config for: nvim-hlslens
 time([[Config for nvim-hlslens]], true)
