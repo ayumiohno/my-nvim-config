@@ -12,11 +12,17 @@ return require('packer').startup(function(use)
 	use { 'EdenEast/nightfox.nvim', config = require('plugin.color-scheme') }
 	use { 'nvim-tree/nvim-web-devicons' }
 	--use { 'ryanoasis/vim-devicons' }
-	use { 'vim-airline/vim-airline', config = require('plugin.vim-airline') }
+	--[[use { 'vim-airline/vim-airline', config = require('plugin.vim-airline') }
 	use {
 		'vim-airline/vim-airline-themes',
 		config = require('plugin.vim-airline-themes')
+	}]]
+	use {
+		'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons',
+		config = require('plugin.lualine')
 	}
+	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',
+		config = require('plugin.bufferline') }
 	use({ "nvim-lua/plenary.nvim" })
 	use({ "hrsh7th/vim-vsnip" })
 	use({ "hrsh7th/cmp-buffer" })

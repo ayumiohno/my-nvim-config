@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bufferline.nvim"] = {
+    config = { "\27LJ\2\2W\0\4\b\0\5\0\14\18\5\1\0009\4\0\1'\6\1\0B\4\3\2\15\0\4\0X\5\2Ä'\4\2\0X\5\1Ä'\4\3\0'\5\4\0\18\6\4\0\18\a\0\0&\5\a\5L\5\2\0\6 \tÔÅ± \tÔÅú \nerror\nmatchÅ\5\1\0\5\0\30\0!6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\20\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\0025\3\16\0=\3\17\0025\3\18\0=\3\19\2=\2\21\0015\2\22\0003\3\23\0=\3\24\0025\3\25\0005\4\26\0=\4\27\3=\3\28\2=\2\29\1B\0\2\1K\0\1\0\foptions\nhover\vreveal\1\3\0\0\nclose\26diagnostics_indicator\1\0\2\ndelay\3»\1\fenabled\2\26diagnostics_indicator\0\1\0\a\16diagnostics\rnvim_lsp\16color_icons\2\fnumbers\fordinal\20separator_style\nslant\22max_prefix_length\3\b\20show_close_icon\2\18modified_icon\b‚óè\15highlights\1\0\0\30error_diagnostic_selected\1\0\1\tbold\2\19error_selected\1\0\1\tbold\2 warning_diagnostic_selected\1\0\1\tbold\2\21warning_selected\1\0\1\tbold\2\29info_diagnostic_selected\1\0\1\tbold\2\18info_selected\1\0\1\tbold\2\24diagnostic_selected\1\0\1\tbold\2\20buffer_selected\1\0\0\1\0\1\tbold\2\nsetup\15bufferline\frequire\0" },
+    loaded = true,
+    path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -110,6 +116,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["lualine.nvim"] = {
+    config = { "\27LJ\2\2ì\6\0\0\5\0&\0;6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\15\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0004\4\0\0=\4\t\0034\4\0\0=\4\n\3=\3\v\0024\3\0\0=\3\f\0025\3\r\0=\3\14\2=\2\16\0015\2\18\0005\3\17\0=\3\19\0025\3\20\0=\3\21\0025\3\22\0=\3\23\0025\3\24\0=\3\25\0025\3\26\0=\3\27\0025\3\28\0=\3\29\2=\2\30\0015\2\31\0004\3\0\0=\3\19\0024\3\0\0=\3\21\0025\3 \0=\3\23\0025\3!\0=\3\25\0024\3\0\0=\3\27\0024\3\0\0=\3\29\2=\2\"\0014\2\0\0=\2#\0014\2\0\0=\2\n\0014\2\0\0=\2$\0014\2\0\0=\2%\1B\0\2\1K\0\1\0\15extensions\20inactive_winbar\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\frefresh\1\0\3\15statusline\3Ë\a\vwinbar\3Ë\a\ftabline\3Ë\a\17ignore_focus\23disabled_filetypes\vwinbar\15statusline\1\0\0\23section_separators\1\0\2\tleft\bÓÇ∞\nright\bÓÇ≤\25component_separators\1\0\2\tleft\bÓÇ±\nright\bÓÇ≥\1\0\4\25always_divide_middle\2\ntheme\tauto\18icons_enabled\2\17globalstatus\1\nsetup\flualine\frequire\0" },
+    loaded = true,
+    path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     config = { "\27LJ\2\2´\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\1B\0\2\1K\0\1\0\21ensure_installed\1\0\1\27automatic_installation\2\1\6\0\0\18rust_analyzer\fpyright\rtsserver\vclangd\16sumneko_lua\nsetup\20mason-lspconfig\frequire\0" },
@@ -191,18 +203,6 @@ _G.packer_plugins = {
     path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-airline"] = {
-    config = { "\27LJ\2\2ù\2\0\0\4\0\f\0\0276\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\b\0'\3\t\0B\0\4\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\n\0'\3\v\0B\0\4\1K\0\1\0\19:bprevious<CR>\n<C-l>\15:bnext<CR>\n<C-h>\6n\bset\vkeymap&let g:airline_powerline_fonts = 1$let g:airline_detect_modified=11let g:airline#extensions#tabline#enabled = 1\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    config = { "\27LJ\2\2@\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0!let g:airline_theme = \"deus\"\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
-  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/ayuay/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -227,34 +227,34 @@ time([[Config for nvim-cmp]], false)
 time([[Config for mason-lspconfig.nvim]], true)
 try_loadstring("\27LJ\2\2´\1\0\0\3\0\6\0\t6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\4\0005\2\3\0=\2\5\1B\0\2\1K\0\1\0\21ensure_installed\1\0\1\27automatic_installation\2\1\6\0\0\18rust_analyzer\fpyright\rtsserver\vclangd\16sumneko_lua\nsetup\20mason-lspconfig\frequire\0", "config", "mason-lspconfig.nvim")
 time([[Config for mason-lspconfig.nvim]], false)
--- Config for: vim-airline-themes
-time([[Config for vim-airline-themes]], true)
-try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0!let g:airline_theme = \"deus\"\bcmd\bvim\0", "config", "vim-airline-themes")
-time([[Config for vim-airline-themes]], false)
 -- Config for: csv.vim
 time([[Config for csv.vim]], true)
 try_loadstring("\27LJ\2\2ô\3\0\0\4\0\16\0!6\0\0\0009\0\1\0009\0\2\0005\1\3\0005\2\5\0005\3\4\0=\3\6\2B\0\3\0016\0\0\0009\0\1\0009\0\2\0005\1\a\0005\2\t\0005\3\b\0=\3\6\2B\0\3\0016\0\0\0009\0\1\0009\0\2\0005\1\n\0005\2\f\0005\3\v\0=\3\6\2B\0\3\0016\0\0\0009\0\r\0'\1\14\0B\0\2\0016\0\0\0009\0\r\0'\1\15\0B\0\2\1K\0\1\0#let g:csv_arrange_align = 'l*'%let g:csv_highlight_column = 'y'\bcmd\1\0\1\fcommand\22:%UnArrangeColumn\1\2\0\0\n*.csv\1\2\0\0\16BufWritePre\1\0\1\fcommand\20:%ArrangeColumn\1\2\0\0\n*.csv\1\3\0\0\fBufRead\17BufWritePost\fpattern\1\0\1\fcommand\20setfiletype csv\1\2\0\0\n*.csv\1\2\0\0\fBufRead\24nvim_create_autocmd\bapi\bvim\0", "config", "csv.vim")
 time([[Config for csv.vim]], false)
--- Config for: nerdtree
-time([[Config for nerdtree]], true)
-try_loadstring("\27LJ\2\2Ä\1\0\0\4\0\b\0\0156\0\0\0009\0\1\0009\0\2\0'\1\3\0'\2\4\0'\3\5\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\1\3\0'\2\6\0'\3\a\0B\0\4\1K\0\1\0\22:NERDTreeFind<CR>\atf\24:NERDTreeToggle<CR>\att\6n\bset\vkeymap\bvim\0", "config", "nerdtree")
-time([[Config for nerdtree]], false)
 -- Config for: nightfox.nvim
 time([[Config for nightfox.nvim]], true)
 try_loadstring("\27LJ\2\0028\0\0\2\0\3\0\0056\0\0\0009\0\1\0'\1\2\0B\0\2\1K\0\1\0\25colorscheme nightfox\bcmd\bvim\0", "config", "nightfox.nvim")
 time([[Config for nightfox.nvim]], false)
+-- Config for: nerdtree
+time([[Config for nerdtree]], true)
+try_loadstring("\27LJ\2\2Ä\1\0\0\4\0\b\0\0156\0\0\0009\0\1\0009\0\2\0'\1\3\0'\2\4\0'\3\5\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\1\3\0'\2\6\0'\3\a\0B\0\4\1K\0\1\0\22:NERDTreeFind<CR>\atf\24:NERDTreeToggle<CR>\att\6n\bset\vkeymap\bvim\0", "config", "nerdtree")
+time([[Config for nerdtree]], false)
 -- Config for: registers.nvim
 time([[Config for registers.nvim]], true)
 try_loadstring("\27LJ\2\0027\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14registers\frequire\0", "config", "registers.nvim")
 time([[Config for registers.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\2ì\6\0\0\5\0&\0;6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\15\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0004\4\0\0=\4\t\0034\4\0\0=\4\n\3=\3\v\0024\3\0\0=\3\f\0025\3\r\0=\3\14\2=\2\16\0015\2\18\0005\3\17\0=\3\19\0025\3\20\0=\3\21\0025\3\22\0=\3\23\0025\3\24\0=\3\25\0025\3\26\0=\3\27\0025\3\28\0=\3\29\2=\2\30\0015\2\31\0004\3\0\0=\3\19\0024\3\0\0=\3\21\0025\3 \0=\3\23\0025\3!\0=\3\25\0024\3\0\0=\3\27\0024\3\0\0=\3\29\2=\2\"\0014\2\0\0=\2#\0014\2\0\0=\2\n\0014\2\0\0=\2$\0014\2\0\0=\2%\1B\0\2\1K\0\1\0\15extensions\20inactive_winbar\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\frefresh\1\0\3\15statusline\3Ë\a\vwinbar\3Ë\a\ftabline\3Ë\a\17ignore_focus\23disabled_filetypes\vwinbar\15statusline\1\0\0\23section_separators\1\0\2\tleft\bÓÇ∞\nright\bÓÇ≤\25component_separators\1\0\2\tleft\bÓÇ±\nright\bÓÇ≥\1\0\4\25always_divide_middle\2\ntheme\tauto\18icons_enabled\2\17globalstatus\1\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 -- Config for: fidget.nvim
 time([[Config for fidget.nvim]], true)
 try_loadstring("\27LJ\2\0028\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
 time([[Config for fidget.nvim]], false)
--- Config for: vim-airline
-time([[Config for vim-airline]], true)
-try_loadstring("\27LJ\2\2ù\2\0\0\4\0\f\0\0276\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\0016\0\0\0009\0\1\0'\1\4\0B\0\2\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\b\0'\3\t\0B\0\4\0016\0\0\0009\0\5\0009\0\6\0'\1\a\0'\2\n\0'\3\v\0B\0\4\1K\0\1\0\19:bprevious<CR>\n<C-l>\15:bnext<CR>\n<C-h>\6n\bset\vkeymap&let g:airline_powerline_fonts = 1$let g:airline_detect_modified=11let g:airline#extensions#tabline#enabled = 1\bcmd\bvim\0", "config", "vim-airline")
-time([[Config for vim-airline]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\2W\0\4\b\0\5\0\14\18\5\1\0009\4\0\1'\6\1\0B\4\3\2\15\0\4\0X\5\2Ä'\4\2\0X\5\1Ä'\4\3\0'\5\4\0\18\6\4\0\18\a\0\0&\5\a\5L\5\2\0\6 \tÔÅ± \tÔÅú \nerror\nmatchÅ\5\1\0\5\0\30\0!6\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\20\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0025\3\n\0=\3\v\0025\3\f\0=\3\r\0025\3\14\0=\3\15\0025\3\16\0=\3\17\0025\3\18\0=\3\19\2=\2\21\0015\2\22\0003\3\23\0=\3\24\0025\3\25\0005\4\26\0=\4\27\3=\3\28\2=\2\29\1B\0\2\1K\0\1\0\foptions\nhover\vreveal\1\3\0\0\nclose\26diagnostics_indicator\1\0\2\ndelay\3»\1\fenabled\2\26diagnostics_indicator\0\1\0\a\16diagnostics\rnvim_lsp\16color_icons\2\fnumbers\fordinal\20separator_style\nslant\22max_prefix_length\3\b\20show_close_icon\2\18modified_icon\b‚óè\15highlights\1\0\0\30error_diagnostic_selected\1\0\1\tbold\2\19error_selected\1\0\1\tbold\2 warning_diagnostic_selected\1\0\1\tbold\2\21warning_selected\1\0\1\tbold\2\29info_diagnostic_selected\1\0\1\tbold\2\18info_selected\1\0\1\tbold\2\24diagnostic_selected\1\0\1\tbold\2\20buffer_selected\1\0\0\1\0\1\tbold\2\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
 -- Config for: nvim-hlslens
 time([[Config for nvim-hlslens]], true)
 try_loadstring("\27LJ\2\2∫\5\0\0\6\0\21\0?6\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\0015\0\3\0006\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\a\0'\4\b\0\18\5\0\0B\1\5\0016\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\t\0'\4\n\0\18\5\0\0B\1\5\0016\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\v\0'\4\f\0\18\5\0\0B\1\5\0016\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\r\0'\4\14\0\18\5\0\0B\1\5\0016\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\15\0'\4\16\0\18\5\0\0B\1\5\0016\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\17\0'\4\18\0\18\5\0\0B\1\5\0016\1\4\0009\1\5\0019\1\6\1'\2\a\0'\3\19\0'\4\20\0\18\5\0\0B\1\5\1K\0\1\0\17<Cmd>noh<CR>\14<Leader>l.g#<Cmd>lua require('hlslens').start()<CR>\ag#.g*<Cmd>lua require('hlslens').start()<CR>\ag*-#<Cmd>lua require('hlslens').start()<CR>\6#-*<Cmd>lua require('hlslens').start()<CR>\6*Y<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>\6NY<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>\6n\20nvim_set_keymap\bapi\bvim\1\0\2\vsilent\2\fnoremap\2\nsetup\fhlslens\frequire\0", "config", "nvim-hlslens")
