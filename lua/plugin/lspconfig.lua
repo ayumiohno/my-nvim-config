@@ -5,7 +5,7 @@ return function()
             index = {threads = 0},
             clang = {excludeArgs = {"-frounding-math"}}
         },
-				on_attach = 'f'
+				on_attach = on_attach
     }]]
     require('lspconfig')['pyright'].setup {
         on_attach = on_attach,
@@ -26,8 +26,16 @@ return function()
     }
     require('lspconfig.ui.windows').default_options.border = 'single'
 
+    -- if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd({"BufWritePre"}, {
+        pattern = {"*.rs", "*.py", "*.c", "*.cpp"},
+        buffer = bufnr,
+        callback = function() vim.lsp.buf.format() end
+    })
+    -- end]]
+
     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-    vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.format()<CR>')
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
     vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')

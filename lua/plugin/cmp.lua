@@ -1,7 +1,5 @@
 return function()
 
-    -- vim.api.nvim_set_hl(0, "MyCmpHL", {fg = "#f5f5dc", bg = "#3c3c3c"})
-    -- Set up nvim-cmp.
     local cmp = require 'cmp'
 
     cmp.setup({
@@ -67,6 +65,7 @@ return function()
         }
     })
 
+    -- local servers = mason-lspconfig.get_installed_servers()
     -- Set up lspconfig.
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
