@@ -1,6 +1,6 @@
 return function()
 	local opts = { noremap = true, silent = true }
-	vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+	vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
 	vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 	vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 	function on_attach(client, bufnr)
@@ -17,15 +17,21 @@ return function()
 		vim.keymap.set('n', '<space>wl', function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, bufopts)
-		vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+		vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
 		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-		vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+		vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, bufopts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-		vim.keymap.set('n', '<space>f',
-			function() vim.lsp.buf.format { async = true } end, bufopts)
+		if client.server_capabilities.formatProvider then
+			vim.keymap.set('n', '<space>f',
+					function() vim.lsp.buf.format() end, bufopts)
+		end
 		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			pattern = { "*.rs", "*.py", "*.c", "*.cpp", "*.lua" },
-			callback = function() vim.lsp.buf.format() end
+			callback = function()
+				if client.server_capabilities.formatProvider then
+					vim.lsp.buf.format()
+				end
+			end
 		})
 	end
 

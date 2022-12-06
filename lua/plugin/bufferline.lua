@@ -21,11 +21,11 @@ return function()
 				local icon = level:match("error") and " " or " "
 				return ' ' .. icon .. count
 			end,
-			hover = {
+			--[[hover = {
 				enabled = true,
 				delay = 200,
 				reveal = { 'close', 'diagnostics_indicator' }
-			},
+			},]]
 			numbers = 'ordinal',
 			separator_style = "slant",
 		},
