@@ -12,10 +12,9 @@ local options = {
 	shiftwidth = 2,
 	softtabstop = 2,
 	tabstop = 2,
-	cursorline = true,
 	number = true,
 	clipboard = "unnamedplus",
-	wrap = false
+	wrap = false,
 }
 
 for k, v in pairs(options) do vim.opt[k] = v end

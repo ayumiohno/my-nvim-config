@@ -11,12 +11,6 @@ return require('packer').startup(function(use)
 
 	use { 'EdenEast/nightfox.nvim', config = require('plugin.color-scheme') }
 	use { 'nvim-tree/nvim-web-devicons' }
-	--use { 'ryanoasis/vim-devicons' }
-	--[[use { 'vim-airline/vim-airline', config = require('plugin.vim-airline') }
-	use {
-		'vim-airline/vim-airline-themes',
-		config = require('plugin.vim-airline-themes')
-	}]]
 	use {
 		'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons',
 		config = require('plugin.lualine')
@@ -30,7 +24,6 @@ return require('packer').startup(function(use)
 	use({ "hrsh7th/cmp-cmdline" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
-	--use { 'vim-skk/skkeleton' } --, config = require('skkeleton') }
 	use { "williamboman/mason.nvim", config = require('plugin.mason') }
 	use {
 		"williamboman/mason-lspconfig.nvim",

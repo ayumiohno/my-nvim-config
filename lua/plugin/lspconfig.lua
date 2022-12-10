@@ -21,16 +21,16 @@ return function()
 		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 		vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, bufopts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-		if client.server_capabilities.formatProvider then
-			vim.keymap.set('n', '<space>f',
-					function() vim.lsp.buf.format() end, bufopts)
-		end
+		--if client.server_capabilities.formatProvider then
+		vim.keymap.set('n', '<space>f',
+			function() vim.lsp.buf.format() end, bufopts)
+		--end
 		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			pattern = { "*.rs", "*.py", "*.c", "*.cpp", "*.lua" },
 			callback = function()
-				if client.server_capabilities.formatProvider then
-					vim.lsp.buf.format()
-				end
+				--if client.server_capabilities.formatProvider then
+				vim.lsp.buf.format()
+				--end
 			end
 		})
 	end
@@ -61,11 +61,35 @@ return function()
 		capabilities = capabilities,
 		settings = { ["rust-analyzer"] = {} }
 	}
+	--local clangd_config = require('lspconfig')['clangd'].init_options
+	local get_clangd_flags = function()
+		local res = {}
+		local pwd = vim.api.nvim_buf_get_name(0)
+		if pwd:find("/mnt/c") then
+			table.insert(res, "--target=x86_64-unknown-mingw-unknown")
+			table.insert(res, "-I/usr/x86_64-w64-mingw32/include")
+			if vim.filetype.match({ buf = 0 }) == 'cpp' then
+				table.insert(res, "-I/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include/c++")
+				table.insert(res, "-I/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include/c++/x86_64-w64-mingw32")
+			end
+		else
+			if vim.filetype.match({ buf = 0 }) == 'cpp' then
+				table.insert(res, "-std=c++2a")
+				table.insert(res, "-I/usr/local/include/opencv4")
+			end
+		end
+		return res
+	end
+
 	require('lspconfig')['clangd'].setup {
 		on_attach = on_attach,
 		flags = lsp_flags,
 		capabilities = capabilities,
+		init_options = {
+			fallbackFlags = get_clangd_flags()
+		}
 	}
+
 	require('lspconfig')['sumneko_lua'].setup {
 		on_attach = on_attach,
 		capabilities = capabilities,
