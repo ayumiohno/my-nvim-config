@@ -21,16 +21,16 @@ return function()
 		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 		vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, bufopts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-		--if client.server_capabilities.formatProvider then
-		vim.keymap.set('n', '<space>f',
-			function() vim.lsp.buf.format() end, bufopts)
-		--end
+		if client.server_capabilities.formatProvider then
+			vim.keymap.set('n', '<space>f',
+				function() vim.lsp.buf.format() end, bufopts)
+		end
 		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			pattern = { "*.rs", "*.py", "*.c", "*.cpp", "*.lua" },
 			callback = function()
-				--if client.server_capabilities.formatProvider then
-				vim.lsp.buf.format()
-				--end
+				if client.server_capabilities.formatProvider then
+					vim.lsp.buf.format()
+				end
 			end
 		})
 	end
@@ -61,7 +61,12 @@ return function()
 		capabilities = capabilities,
 		settings = { ["rust-analyzer"] = {} }
 	}
-	--local clangd_config = require('lspconfig')['clangd'].init_options
+	require('lspconfig')['neocmake'].setup{
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+	}
+
 	local get_clangd_flags = function()
 		local res = {}
 		local pwd = vim.api.nvim_buf_get_name(0)
@@ -69,6 +74,7 @@ return function()
 			table.insert(res, "--target=x86_64-unknown-mingw-unknown")
 			table.insert(res, "-I/usr/x86_64-w64-mingw32/include")
 			if vim.filetype.match({ buf = 0 }) == 'cpp' then
+				table.insert(res, "-std=c++2a")
 				table.insert(res, "-I/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include/c++")
 				table.insert(res, "-I/usr/lib/gcc/x86_64-w64-mingw32/10-win32/include/c++/x86_64-w64-mingw32")
 			end
@@ -76,6 +82,8 @@ return function()
 			if vim.filetype.match({ buf = 0 }) == 'cpp' then
 				table.insert(res, "-std=c++2a")
 				table.insert(res, "-I/usr/local/include/opencv4")
+			else
+				--table.insert(res, "-std=c11")
 			end
 		end
 		return res

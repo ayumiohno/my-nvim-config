@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 	use({ "hrsh7th/cmp-cmdline" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
+	use { 'jose-elias-alvarez/null-ls.nvim', config = require('plugin.null-ls')}
 	use { "williamboman/mason.nvim", config = require('plugin.mason') }
 	use {
 		"williamboman/mason-lspconfig.nvim",
