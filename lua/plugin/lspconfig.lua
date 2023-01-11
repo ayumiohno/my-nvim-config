@@ -21,10 +21,7 @@ return function()
 		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 		vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, bufopts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-		if client.server_capabilities.formatProvider then
-			vim.keymap.set('n', '<space>f',
-				function() vim.lsp.buf.format() end, bufopts)
-		end
+		vim.keymap.set('n', 'gf', vim.lsp.buf.format, bufopts)
 		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			pattern = { "*.rs", "*.py", "*.c", "*.cpp", "*.lua" },
 			callback = function()
@@ -61,7 +58,7 @@ return function()
 		capabilities = capabilities,
 		settings = { ["rust-analyzer"] = {} }
 	}
-	require('lspconfig')['neocmake'].setup{
+	require('lspconfig')['neocmake'].setup {
 		on_attach = on_attach,
 		flags = lsp_flags,
 		capabilities = capabilities,

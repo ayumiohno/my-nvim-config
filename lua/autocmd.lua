@@ -12,7 +12,7 @@ local clangformat = function()
 end
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = { "*.cpp", "*.hpp" },
+	pattern = { "*.cpp", "*.hpp", "*.c", "*.h" },
 	callback = clangformat
 })
 
