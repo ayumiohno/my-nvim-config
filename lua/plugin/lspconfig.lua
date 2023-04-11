@@ -64,6 +64,12 @@ return function()
 		capabilities = capabilities,
 	}
 
+	require('lspconfig')['ocamllsp'].setup {
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+	}
+
 	local get_clangd_flags = function()
 		local res = {}
 		local pwd = vim.api.nvim_buf_get_name(0)
@@ -95,17 +101,5 @@ return function()
 		}
 	}
 
-	require('lspconfig')['sumneko_lua'].setup {
-		on_attach = on_attach,
-		capabilities = capabilities,
-		settings = {
-			Lua = {
-				runtime = { version = 'LuaJIT' },
-				diagnostics = { globals = { 'vim' } },
-				workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-				telemetry = { enable = false }
-			}
-		}
-	}
 	require('lspconfig.ui.windows').default_options.border = 'single'
 end
